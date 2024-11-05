@@ -1,5 +1,8 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -15,7 +18,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 80vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,16 +28,22 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App-main {
+min-height: 64vh;
+font-size: calc(5px + 2vmin);
+color: white;
+}
+
 /* 10/22 need to seperate the footer and header, currently they're connected*/
 .App-footer {
   background-color: #282c34;
   min-height: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center; /*baseline(left) center(middle) end(right)*/
   justify-content: end;
   margin-top: auto;
-  font-size: calc(5px + 2vmin);
+  font-size: calc(1px + 1vmin);
   color: white;
 }
 
