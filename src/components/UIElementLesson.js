@@ -6,7 +6,7 @@ const  Button = ({ onClick, label}) => (
     //Hint: Use the 'onClick' prop for the event handler and 'label' prop for the button text
 
     <button onClick={onClick}>
-        {labelr}
+        {label}
     </button>
     //function onClick() { label }
 );
@@ -15,7 +15,9 @@ const  Button = ({ onClick, label}) => (
 const TextField = ({ value, onChange, placeholder }) => (
     // TODO: Implement the input element here
     // Hint: Use the 'value', 'onChange', and 'placeholder' props
-
+        <TextField onChange={onChange}>
+            value = [placeholder]
+        </TextField>
 );
 
 // Checkbox Component
