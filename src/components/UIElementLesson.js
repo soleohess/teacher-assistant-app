@@ -1,97 +1,108 @@
 import React, { useState } from "react";
 
-//Button Component
-const  Button = ({ onClick, label}) => (
-    //ToDo: implement the button element here
-    //Hint: Use the 'onClick' prop for the event handler and 'label' prop for the button text
-
+// Button Component
+const Button = ({ onClick, label }) => (
     <button onClick={onClick}>
         {label}
     </button>
-    //function onClick() { label }
 );
 
-//TextField Component
-const TextField = ({ value, onChange, placeholder }) => (
-    // TODO: Implement the input element here
-    // Hint: Use the 'value', 'onChange', and 'placeholder' props
-        <TextField onChange={onChange}>
-            value = [placeholder]
-        </TextField>
+// TextField Component with Error Handling
+const TextField = ({ value, onChange, placeholder, error }) => (
+    <div>
+        <input type="text" value={value} onChange={onChange} placeholder={placeholder} />
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
 );
 
 // Checkbox Component
 const Checkbox = ({ checked, onChange, label }) => (
-    // TODO: Implement the checkbox input and label here
- // Hint: Use the 'checked' and 'onChange' props for the input, and 'label' for the text
+    <label>
+        <input type="checkbox" checked={checked} onChange={onChange} />
+        {label}
+    </label>
 );
 
 // Select Component
-// Select (dropdown) components allow users to choose from a list of options
 const Select = ({ value, onChange, options }) => (
- // TODO: Implement the select element and its option children here
- // Hint: Use 'value' and 'onChange' props for the select, and map over 'options' for the option elements
+    <select value={value} onChange={onChange}>
+        {options.map((option, index) => (
+            <option key={index} value={option.value}>
+                {option.label}
+            </option>
+        ))}
+    </select>
+);
+
+// RadioButtonGroup Component
+const RadioButtonGroup = ({ name, selectedValue, onChange, options }) => (
+    <div>
+        {options.map((option, index) => (
+            <label key={index}>
+                <input
+                    type="radio"
+                    name={name}
+                    value={option.value}
+                    checked={selectedValue === option.value}
+                    onChange={onChange}
+                />
+                {option.label}
+            </label>
+        ))}
+    </div>
 );
 
 // Main UIElementsLesson Component
 const UIElementsLesson = () => {
- // State hooks for managing component states
- // TODO: Create state variables for text, isChecked, and selectedOption using useState
+    // State hooks for managing component states
+    const [text, setText] = useState("");
+    const [isChecked, setIsChecked] = useState(false);
+    const [selectedOption, setSelectedOption] = useState("");
+    const [selectedRadio, setSelectedRadio] = useState("");
+    const [error, setError] = useState("");
 
- // Event handlers
- const handleButtonClick = () => {
- // TODO: Implement button click handler
- // Hint: Use alert() to show a message when the button is clicked
- };
-
- const handleTextChange = (e) => {
- // TODO: Implement text change handler
- // Hint: Update the text state with the new value from the event
- };
-
- const handleCheckboxChange = (e) => {
- // TODO: Implement checkbox change handler
- // Hint: Update the isChecked state with the new checked value from the event
- };
-
- const handleSelectChange = (e) => {
- // TODO: Implement select change handler
- // Hint: Update the selectedOption state with the new value from the event
- };
-
- // Options for the Select component
- const options = [
-    { value: 'option1', label: 'Option 1' },
-    { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Option 3' },
-];
+    // Event handler for text field
+    const handleTextChange = (e) => {
+        const value = e.target.value;
+        if (value.length > 10) {
+            setError("Text is too long");
+        } else {
+            setError("");
+        }
+        setText(value);
+    };
 
     return (
-    <div>
-        <h1>React Basic UI Elements</h1>
-
-        <h2>Button</h2>
-            {/* TODO: Add the Button component here */}
-
-        <h2>Text Field</h2>
-        {/* TODO: Add the TextField component here */}
-        {/* TODO: Add a paragraph to display the entered text */}
-        
-        <h2>Checkbox</h2>
-        {/* TODO: Add the Checkbox component here */}
-        {/* TODO: Add a paragraph to display the checkbox state */}
-        
-        <h2>Select (Dropdown)</h2>
-        {/* TODO: Add the Select component here */}
-        {/* TODO: Add a paragraph to display the selected option */}
-        
-        {/*
-        Student Task: Add a new UI element here
-        Try adding a radio button group or a slider component
-        Hint: You'll need to create a new component and add state for it
-        */}
-    </div>
+        <div>
+            <Button onClick={() => alert("Button clicked!")} label="Click Me" />
+            <TextField value={text} onChange={handleTextChange} placeholder="Enter text" error={error} />
+            <Checkbox checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} label="Check me" />
+            <Select
+                value={selectedOption}
+                onChange={(e) => setSelectedOption(e.target.value)}
+                options={[
+                    { value: "", label: "Select an option" },
+                    { value: "option1", label: "Option 1" },
+                    { value: "option2", label: "Option 2" },
+                ]}
+            />
+            <RadioButtonGroup
+                name="radioGroup"
+                selectedValue={selectedRadio}
+                onChange={(e) => setSelectedRadio(e.target.value)}
+                options={[
+                    { value: "radio1", label: "Radio 1" },
+                    { value: "radio2", label: "Radio 2" },
+                ]}
+            />
+            <div>
+                <p>Text: {text}</p>
+                <p>Checked: {isChecked ? "Yes" : "No"}</p>
+                <p>Selected Option: {selectedOption}</p>
+                <p>Selected Radio: {selectedRadio}</p>
+            </div>
+        </div>
     );
-   };
+};
 
-export default UIElementsLesson; 
+export default UIElementsLesson;
