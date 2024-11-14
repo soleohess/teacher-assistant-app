@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import './App.css'
-import UIElementsLesson from './components/UIElementLesson';
+import UIElementsLesson from './components/UIElements';
 
 function App() {
   return (

@@ -105,4 +105,4 @@ const UIElementsLesson = () => {
     );
 };
 
-export default UIElementsLesson;
+export default UIElements;
