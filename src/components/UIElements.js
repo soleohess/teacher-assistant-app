@@ -1,5 +1,15 @@
 import React, { useState } from "react";
 
+
+function UIElements(props) {
+    return (
+        <div className="UI-elements">
+            <h2>{props.heading}</h2>
+            <p>{props.content}</p>
+        </div>
+    );
+}
+
 // Button Component
 const Button = ({ onClick, label }) => (
     <button onClick={onClick}>
@@ -52,8 +62,8 @@ const RadioButtonGroup = ({ name, selectedValue, onChange, options }) => (
     </div>
 );
 
-// Main UIElementsLesson Component
-const UIElementsLesson = () => {
+// Main UIElements Component
+const UIElements = () => {
     // State hooks for managing component states
     const [text, setText] = useState("");
     const [isChecked, setIsChecked] = useState(false);
