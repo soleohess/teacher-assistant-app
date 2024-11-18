@@ -1,15 +1,5 @@
 import React, { useState } from "react";
 
-
-function UIElements(props) {
-    return (
-        <div className="UI-elements">
-            <h2>{props.heading}</h2>
-            <p>{props.content}</p>
-        </div>
-    );
-}
-
 // Button Component
 const Button = ({ onClick, label }) => (
     <button onClick={onClick}>

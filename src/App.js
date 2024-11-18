@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header title="Teacher Assistant App" description="Your digital classroom helper"/>
       <Main description="this is the main content of the page"/>
-      <Footer description="©Copyright Soleo" />
+      <Footer description="©Copyright Soleo (teehee)" />
       <UIElements heading="UI Elements" content="This is some content for the UI elements component." />
       {/* Other components will go here */}
     </div>
