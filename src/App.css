@@ -28,6 +28,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
 .App-main {
 min-height: 64vh;
 font-size: calc(5px + 2vmin);
