@@ -1,4 +1,5 @@
 To Do:
 
 Bring Variable options of UIElements off of webpage, just display features.
-Fix Button in ./TestButton script
+in Dropdown menu, seperate the three buttons so that they can all have their own style
+To do this make every button into a const and set their data then call them in App.js

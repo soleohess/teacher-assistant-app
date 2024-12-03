@@ -10,11 +10,12 @@
   pointer-events: none;
 }
 
+/* Logo animation
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   background-color: #282c34;
@@ -30,12 +31,11 @@
 }
 
 .App-main {
-min-height: 64vh;
+min-height: calc(1px + 35vh);
 font-size: calc(5px + 2vmin);
 color: white;
 }
 
-/* 10/22 need to seperate the footer and header, currently they're connected*/
 .App-footer {
   background-color: #282c34;
   min-height: auto;
@@ -59,4 +59,39 @@ color: white;
   to {
     transform: rotate(360deg);
   }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu button {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #ddd;
 }

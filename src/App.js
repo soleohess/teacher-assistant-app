@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import './App.css'
 import UIElements from './components/UIElements';
 import TestButton from './components/TestButton';
+import DropdownMenu from './components/DropdownMenu';
 
 function App() {
 
@@ -16,9 +17,10 @@ function App() {
     <div className="App">
       <Header title="Teacher Assistant App" description="Your digital classroom helper"/>
       <Main description="this is the main content of the page"/>
+      <DropdownMenu />
       <Footer description="©Copyright Soleo (teehee)" />
       <UIElements heading="UI Elements" content="This is some content for the UI elements component." />
-      <TestButton onPress={buttonPress}/> 
+      <TestButton onPress={buttonPress} label={"TestButton"}/> 
 
       {/* Other components will go here */}
     </div>

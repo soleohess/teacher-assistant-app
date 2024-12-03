@@ -5,7 +5,7 @@ function TestButton({ onPress, label, style }) {
     <div className="TestButton">
       <button 
         onClick={onPress}
-        style={{backgroundColor: 'blue', color: 'white', padding: '100px 200px', border: 'none', borderRadius: '5px'}}
+        style={{backgroundColor: 'blue', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '5px'}}
       >
         {label}
       </button>
