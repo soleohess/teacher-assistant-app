@@ -3,3 +3,10 @@ To Do:
 Bring Variable options of UIElements off of webpage, just display features.
 in Dropdown menu, seperate the three buttons so that they can all have their own style
 To do this make every button into a const and set their data then call them in App.js
+
+In UIElements.js try to change the const's into functions to be able to refrence them
+and use props so that to add a new UIelement I just make a script that inports UIElements.js
+and defines the value of a function.
+    alternitivly, I could try making a script for every UI element using props
+    then in App.js or a new script: import the needed UI prop script and define the Variable
+    
