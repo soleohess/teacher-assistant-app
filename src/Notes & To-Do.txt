@@ -9,4 +9,4 @@ and use props so that to add a new UIelement I just make a script that inports U
 and defines the value of a function.
     alternitivly, I could try making a script for every UI element using props
     then in App.js or a new script: import the needed UI prop script and define the Variable
-    
+
