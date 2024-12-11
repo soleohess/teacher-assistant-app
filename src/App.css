@@ -61,28 +61,28 @@ color: white;
   }
 }
 
+/* Position the dropdown menu to the left side */
 .dropdown {
-  position: relative;
+  position: absolute;
+  left: 20px;
+  top: 200px; /* Adjust as needed */
   display: inline-block;
 }
 
-.dropdown-toggle {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-}
-
+/* Style the dropdown menu to look like a box */
 .dropdown-menu {
   display: flex;
   flex-direction: column;
   position: absolute;
   background-color: white;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
+  border: 1px solid #ccc;
+  border-radius: 5px; /* This adjusts how curved the edges are */
+  padding: 10px;
   z-index: 1;
-}
+} 
 
+/*
 .dropdown-menu button {
   background-color: white;
   color: black;
@@ -90,8 +90,57 @@ color: white;
   border: none;
   text-align: left;
   cursor: pointer;
-}
+  margin: 5px 0;
+}*/
 
+
+/* This changes the backround color of the button you're hovering over 
 .dropdown-menu button:hover {
   background-color: #ddd;
+}
+*/
+
+/* Style for Trivory button */
+.trivory-button {
+  background-color: #ffcc00; /* Example color */
+  color: black;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.trivory-button:hover {
+  background-color: #e6b800; /* Example hover color */
+}
+
+/* Style for Canvas button */
+.canvas-button {
+  background-color: #ff5733; /* Example color */
+  color: white;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.canvas-button:hover {
+  background-color: #cc4626; /* Example hover color */
+}
+
+/* Style for Gmail button */
+.gmail-button {
+  background-color: #4285f4; /* Example color */
+  color: white;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.gmail-button:hover {
+  background-color: #357ae8; /* Example hover color */
 }

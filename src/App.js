@@ -18,10 +18,10 @@ function App() {
       <Header title="Teacher Assistant App" description="Your digital classroom helper"/>
       <Main description="this is the main content of the page"/>
       <DropdownMenu />
-      <Footer description="©Copyright Soleo (teehee)" />
-      <UIElements heading="UI Elements" content="This is some content for the UI elements component." />
       <TestButton onPress={buttonPress} label={"TestButton"}/> 
-
+      <UIElements heading="UI Elements" content="This is some content for the UI elements component." />
+      <Footer description="©Copyright Soleo (teehee)" />
+      
       {/* Other components will go here */}
     </div>
   );

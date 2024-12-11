@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 
-function DropdownMenu(TrivoryStyle, CanvasStyle, GmailStyle) {
+function DropdownMenu() {
   const [isOpen, setIsOpen] = useState(false);
-//useState true or false determines the default state of the dropdown menu (if it's open or closed)
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className="Dropdown">
-      <button onClick={toggleDropdown} className="Dropdown-toggle">
+    <div className="dropdown">
+      <button onClick={toggleDropdown} className="dropdown-toggle">
         Quick Links <span>{isOpen ? "▼" : "▶"}</span>
       </button>
       {isOpen && (
         <div className="dropdown-menu">
-          <button TrivoryStyle={{backgroundColor: "green"}} onClick={() => window.open("https://trivory.com/ibw")}>Trivory</button>
-          <button onClick={() => window.open("https://portlandpublic.instructure.com/")}>Canvas</button>
-          <button onClick={() => window.open("https://mail.google.com")}>Gmail</button>
+          <button className="trivory-button" onClick={() => window.open("https://trivory.com/ibw")}>Trivory</button>
+          <button className="canvas-button" onClick={() => window.open("https://portlandpublic.instructure.com/")}>Canvas</button>
+          <button className="gmail-button" onClick={() => window.open("https://mail.google.com")}>Gmail</button>
         </div>
       )}
     </div>
