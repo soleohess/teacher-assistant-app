@@ -10,3 +10,83 @@ and defines the value of a function.
     alternitivly, I could try making a script for every UI element using props
     then in App.js or a new script: import the needed UI prop script and define the Variable
 
+
+Copilot said this about making a sign in system:
+
+
+To create an account system that records user data, you will need to implement both frontend and backend components. Here is a high-level overview of the steps involved:
+
+Frontend (React)
+
+Create a registration form to collect user data (e.g., username, email, password).
+Create a login form to authenticate users.
+Use state management to handle form inputs and submission.
+Backend (Node.js/Express)
+
+Set up a server to handle user registration and authentication.
+Use a database (e.g., MongoDB, PostgreSQL) to store user data.
+Implement API endpoints for user registration, login, and data retrieval.
+Authentication
+
+Use libraries like bcrypt to hash passwords before storing them in the database.
+Use JSON Web Tokens (JWT) for user authentication and session management.
+Security
+
+Ensure secure communication using HTTPS.
+Validate and sanitize user inputs to prevent security vulnerabilities.
+Example Implementation
+Frontend (React)
+Create a registration form in src/components/Register.js:
+
+
+import React, { useState } from 'react';
+
+const Register = () => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, email, password }),
+    });
+    const data = await response.json();
+    console.log(data);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Register</button>
+    </form>
+  );
+};
+
+export default Register;
+
+Integration
+Update your React app to include the registration and login components.
+Ensure your backend server is running and accessible from your frontend.
+This is a basic example to get you started. You will need to expand and secure it further for a production environment.
