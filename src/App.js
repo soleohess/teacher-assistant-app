@@ -20,7 +20,7 @@ function App() {
       <DropdownMenu />
       <TestButton onPress={buttonPress} label={"TestButton"}/> 
       <UIElements heading="UI Elements" content="This is some content for the UI elements component." />
-      <Footer description="©Copyright Soleo (teehee)" />
+      <Footer description="footer text placeholder" />
       
       {/* Other components will go here */}
     </div>

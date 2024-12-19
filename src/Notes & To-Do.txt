@@ -11,6 +11,8 @@ and defines the value of a function.
     then in App.js or a new script: import the needed UI prop script and define the Variable
 
 
+
+
 Copilot said this about making a sign in system:
 
 
