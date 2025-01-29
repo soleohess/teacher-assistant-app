@@ -14,7 +14,12 @@ const Login = () => {
       body: JSON.stringify({ email, password }),
     });
     const data = await response.json();
-    console.log(data);
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+      console.log('Login successful');
+    } else {
+      console.log('Login failed');
+    }
   };
 
   return (
