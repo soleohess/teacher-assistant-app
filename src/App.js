@@ -8,6 +8,7 @@ import TestButton from './components/TestButton';
 import DropdownMenu from './components/DropdownMenu';
 import Register from './components/Register';
 import Login from './components/Login';
+import Tabs from './components/Tabs';
 
 function App() {
   const buttonPress = () => {
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="App">
+      <Tabs />
       <Header title="Teacher Assistant App" description="Your digital classroom helper"/>
       <Main description="this is the main content of the page"/>
       <DropdownMenu />
